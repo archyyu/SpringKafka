@@ -1,0 +1,16 @@
+# Consumer Specific Configuration
+spring:
+  kafka:
+    consumer:
+      group-id: spring-kafka-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+server:
+  port: 8082
+
+# Spring Cloud Config
+spring:
+  config:
+    import: "optional:configserver:http://localhost:8888"

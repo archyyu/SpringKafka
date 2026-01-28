@@ -1,0 +1,13 @@
+# Common Spring Kafka Configuration
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      properties:
+        spring.json.trusted.packages: com.example.springkafka.common.model
+
+# Topic Configuration
+app:
+  kafka:
+    topic:
+      name: spring-kafka-topic
