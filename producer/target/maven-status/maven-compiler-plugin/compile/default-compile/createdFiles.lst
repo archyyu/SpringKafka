@@ -1,3 +1,2 @@
-com\example\springkafka\producer\KafkaProducer.class
-com\example\springkafka\producer\controller\KafkaController.class
+com\example\springkafka\producer\RedisLockConfig.class
 com\example\springkafka\producer\SpringKafkaProducerApplication.class

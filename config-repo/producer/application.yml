@@ -4,11 +4,10 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  data:
+    redis:
+      host: localhost
+      port: 6379
 
 server:
   port: 8081
-
-# Spring Cloud Config
-spring:
-  config:
-    import: "optional:configserver:http://localhost:8888"
