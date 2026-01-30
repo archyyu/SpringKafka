@@ -1,5 +1,3 @@
-common/target/
-consumer/target/
-
+**/target/
 *.class
 *.log
