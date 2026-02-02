@@ -24,6 +24,7 @@
     <modules>
         <module>common</module>
         <module>config-server</module>
+        <module>gateway</module>
         <module>eureka-server</module>
         <module>producer</module>
         <module>consumer</module>

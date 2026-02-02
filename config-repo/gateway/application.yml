@@ -1,0 +1,27 @@
+# Gateway Configuration
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: producer
+          uri: lb://producer
+          predicates:
+            - Path=/producer/**
+          filters:
+            - StripPrefix=1
+        - id: consumer
+          uri: lb://consumer
+          predicates:
+            - Path=/consumer/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
