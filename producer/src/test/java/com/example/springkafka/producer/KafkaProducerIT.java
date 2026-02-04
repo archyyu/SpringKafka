@@ -1,6 +1,7 @@
 package com.example.springkafka.producer;
 
 import com.example.springkafka.common.model.Message;
+import java.time.Duration;
 import java.util.Map;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -46,7 +47,7 @@ class KafkaProducerIT {
         kafkaProducer.sendMessage(new Message("hello", "test"));
 
         ConsumerRecord<String, Message> record =
-                KafkaTestUtils.getSingleRecord(consumer, "spring-kafka-topic", 5000);
+                KafkaTestUtils.getSingleRecord(consumer, "spring-kafka-topic", Duration.ofSeconds(5));
 
         assertThat(record.value().getContent()).isEqualTo("hello");
         consumer.close();
