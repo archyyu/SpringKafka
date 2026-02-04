@@ -11,3 +11,12 @@ app:
   kafka:
     topic:
       name: spring-kafka-topic
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env,beans,loggers,threaddump,heapdump,prometheus
+  endpoint:
+    health:
+      show-details: always
